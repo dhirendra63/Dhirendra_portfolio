@@ -24,8 +24,7 @@ const Navbar = () => {
                             {link}
                         </a>
                     ))}
-     <a
-  href="/resume_dhirendra.pdf"
+     <a href="/resume_dhirendra.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="px-4 py-2 rounded-full bg-accentPurple text-white font-semibold hover:bg-accentPurple/90 transition-all">

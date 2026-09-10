@@ -25,10 +25,11 @@ const Hero = () => {
                         View Projects
                     </a>
                     <a href="/resume_dhirendra.pdf"
-                        download="Dhirendra_Resume.pdf"
-                        className="px-10 py-4 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-300"
-                    >
-                        Download Resume
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-full bg-accentPurple text-white font-semibold hover:bg-accentPurple/90 transition-all">
+                        Resume
+                        {/* <FaEye /> */}
                     </a>
                 </div>
 
@@ -52,7 +53,7 @@ const Hero = () => {
                         <div className="w-3 h-3 rounded-full bg-green-500" />
                     </div>
                     <pre className="text-sm font-mono text-accentCyan/80">
-<code>{`
+                        <code>{`
 class Developer {
   constructor() {
     this.name = "Dhirendra";
@@ -70,11 +71,11 @@ class Developer {
 const me = new Developer();
 me.solveProblems();
 `}
-</code>
-</pre>
-  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-accentPurple/20 blur-3xl rounded-full" />
-     <div className="absolute -top-10 -left-10 w-40 h-40 bg-accentCyan/20 blur-3xl rounded-full" />
-            </div>
+                        </code>
+                    </pre>
+                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-accentPurple/20 blur-3xl rounded-full" />
+                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-accentCyan/20 blur-3xl rounded-full" />
+                </div>
             </motion.div>
         </section>
     );
