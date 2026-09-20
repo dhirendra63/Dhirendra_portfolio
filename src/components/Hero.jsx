@@ -24,7 +24,7 @@ const Hero = () => {
                     <a href="#projects" className="bg-accentPurple px-8 py-3 rounded-full font-medium hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all">
                         View Projects
                     </a>
-                    <a href="/resume_dhirendra.pdf"
+                    <a href="/dhirendra_resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-4 py-2 rounded-full bg-accentPurple text-white font-semibold hover:bg-accentPurple/90 transition-all">

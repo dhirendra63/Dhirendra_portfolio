@@ -47,7 +47,7 @@ const Resume = () => {
 
           {/* Download Button */}
           <a
-            href="/resume_dhirendra.pdf"
+            href="/dhirendra_resume.pdf"
             download="Dhirendra_Resume.pdf"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full
                        bg-gradient-to-r from-accentPurple to-accentCyan
