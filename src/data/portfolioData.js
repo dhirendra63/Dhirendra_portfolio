@@ -32,25 +32,100 @@ export const data = {
   },
 
   projects: [
-    {
-      title: "School Management System",
-      client: "Seth Anandram Jaipuria",
-      tech: ["Python", "Django", "SQLite3", "HTML", "CSS", "JavaScript", "Bootstrap"],
-      description: "Developed a school management system with separate Admin, Teacher, and Student modules.",
-      features: ["Admin module", "Teacher module", "Student module", "Backend using Django", "SQLite3 database", "Responsive interface"],
-      github: null, // Add link when available
-      live: null,
-    },
-    {
-      title: "Interview AI Agent",
-      category: "Full Stack",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Firebase", "Razorpay", "Framer Motion"],
-      description: "Built an AI-powered interview platform with Google Authentication and Razorpay Payment Integration.",
-      features: ["AI-powered interview platform", "Google Authentication", "Razorpay Payment Integration", "REST APIs", "Deployed on Render"],
-      github: null,
-      live: null,
-    }
-  ],
+
+  {
+    title: "Interview AI Agent",
+    category: "Full Stack",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Razorpay",
+      "Framer Motion"
+    ],
+    description:
+      "Built an AI-powered interview platform with Google Authentication and Razorpay Payment Integration.",
+    features: [
+      "AI-powered interview platform",
+      "Google Authentication",
+      "Razorpay Payment Integration",
+      "REST APIs",
+      "Deployed on Render"
+    ],
+    github: "https://github.com/dhirendra63",
+    live: "https://interviewai-frontend-s3qs.onrender.com"
+  },
+
+  {
+    title: "LOSFER",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB"
+    ],
+    description:
+      "AI-powered Lost & Found platform designed for university campuses.",
+    features: [
+      "Lost and found item reporting",
+      "User authentication",
+      "Item claim management",
+      "Image upload",
+      "Real-time notifications",
+      "Admin management"
+    ],
+    github: "https://github.com/dhirendra63",
+    live: null
+  },
+  {
+    title: "StayAura",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "EJS"
+    ],
+    description:
+      "Full-stack accommodation listing platform for discovering and managing property listings.",
+    features: [
+      "Property listing management",
+      "User authentication",
+      "CRUD operations",
+      "Reviews and ratings",
+      "MongoDB database",
+      "Responsive interface"
+    ],
+    github: "https://github.com/dhirendra63",
+    live: null
+  },
+  {
+    title: "School Management System",
+    client: "Seth Anandram Jaipuria",
+    tech: [
+      "Python",
+      "Django",
+      "SQLite3",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    description:
+      "Developed a school management system with separate Admin, Teacher, and Student modules.",
+    features: [
+      "Admin module",
+      "Teacher module",
+      "Student module",
+      "Backend using Django",
+      "SQLite3 database",
+      "Responsive interface"
+    ],
+    github: "https://github.com/dhirendra63",
+    live: null
+  },
+],
 
   certifications: [
   {

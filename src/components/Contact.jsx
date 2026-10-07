@@ -1,8 +1,55 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setStatus("Sending...");
+
+    try {
+      await emailjs.send(
+        "service_evwu9b7",
+        "template_s58pwmd",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "zLsuON-9MfJ29bF7-"
+      );
+
+      setStatus("Message sent successfully! ✓");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
@@ -116,9 +163,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="glass-card p-8 space-y-5"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
 
+            {/* Name */}
             <div>
               <label className="block text-sm text-gray-400 mb-2">
                 Name
@@ -126,12 +174,16 @@ const Contact = () => {
 
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 required
                 className="w-full bg-white/5 border border-white/10 p-3 rounded-lg text-white placeholder-gray-500 focus:border-accentPurple outline-none transition-all"
               />
             </div>
 
+            {/* Email */}
             <div>
               <label className="block text-sm text-gray-400 mb-2">
                 Email
@@ -139,18 +191,25 @@ const Contact = () => {
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="your@email.com"
                 required
                 className="w-full bg-white/5 border border-white/10 p-3 rounded-lg text-white placeholder-gray-500 focus:border-accentPurple outline-none transition-all"
               />
             </div>
 
+            {/* Message */}
             <div>
               <label className="block text-sm text-gray-400 mb-2">
                 Message
               </label>
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="5"
                 placeholder="Write your message..."
                 required
@@ -158,12 +217,21 @@ const Contact = () => {
               />
             </div>
 
+            {/* Send Button */}
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-accentPurple text-white font-bold hover:bg-accentPurple/80 transition-all"
+              disabled={status === "Sending..."}
+              className="w-full py-3 rounded-lg bg-accentPurple text-white font-bold hover:bg-accentPurple/80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {status === "Sending..." ? "Sending..." : "Send Message"}
             </button>
+
+            {/* Status Message */}
+            {status && (
+              <p className="text-center text-sm text-gray-300">
+                {status}
+              </p>
+            )}
 
           </motion.form>
 
